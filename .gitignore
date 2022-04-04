@@ -1,1 +1,4 @@
 .netrwhist
+
+nvim/.config/nvim/plugin
+nvim/.config/nvim/undo
