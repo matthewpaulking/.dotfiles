@@ -11,6 +11,7 @@ opt.relativenumber = true
 
 opt.hlsearch = true
 opt.smartcase = true
+opt.ignorecase = true
 opt.inccommand = 'split'
 opt.incsearch = true
 
