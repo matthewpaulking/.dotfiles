@@ -63,9 +63,10 @@ lspconfig.tsserver.setup({
 })
 
 lspconfig.volar.setup({
+    cmd = { 'vue-language-server', '--stdio' },
     init_options = {
         typescript = {
-            serverPath = '/usr/lib/node_modules/typescript/lib/tsserverlibrary.js',
+            serverPath = '/Users/mpk/.nvm/versions/node/v17.3.0/lib/node_modules/typescript/lib/tsserverlibrary.js',
         },
     },
     capabilities = capabilities,
