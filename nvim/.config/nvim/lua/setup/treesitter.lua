@@ -2,6 +2,9 @@ require('nvim-treesitter.configs').setup({
     indent = {
         enable = true,
     },
+    highlight = {
+        enable = { 'astro' },
+    },
     autotag = {
         enable = true,
         filetypes = {
@@ -13,9 +16,6 @@ require('nvim-treesitter.configs').setup({
             'markdown',
             'vue',
         },
-    },
-    {
-        fsjldkjf,
     },
 })
 

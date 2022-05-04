@@ -63,6 +63,12 @@ packer.startup(function(use)
     })
     use({ 'windwp/nvim-ts-autotag' })
     use({ 'windwp/nvim-autopairs' })
+    -- use({
+    --     'simrat39/symbols-outline.nvim',
+    --     config = function()
+    --         require('setup.symbols-outline')
+    --     end,
+    -- })
 
     -- LSP
     use({
@@ -83,6 +89,21 @@ packer.startup(function(use)
         'hrsh7th/vim-vsnip',
         config = function()
             require('setup.cmp')
+        end,
+    })
+
+    -- Debugging
+    use({
+        'mfussenegger/nvim-dap',
+        config = function()
+            require('setup.dap')
+        end,
+    })
+    use({
+        'rcarriga/nvim-dap-ui',
+        requires = { 'mfussenegger/nvim-dap' },
+        config = function()
+            require('setup.dap-ui')
         end,
     })
 
@@ -107,6 +128,40 @@ packer.startup(function(use)
         'vim-test/vim-test',
         config = function()
             require('setup.vimtest')
+        end,
+    })
+
+    -- Bookmarked to try later
+    -- use({ 'windwp/nvim-spectre' })
+    -- use({ 'lukas-reineke/indent-blankline.nvim' })
+    -- use({ 'karb94/neoscroll.nvim' })
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+            require('setup.lualine')
+        end,
+    })
+    -- use({ 'norcalli/nvim-colorizer.lua' })
+    use({ 'npxbr/glow.nvim' })
+    use({ 'ggandor/lightspeed.nvim' })
+    use({ 'L3MON4D3/LuaSnip' })
+    -- use({ 'lewis6991/gitsigns.nvim' })
+    -- use({ 'folke/zen-mode.nvim' })
+    -- use({ 'folke/twilight.nvim' })
+    use({
+        'folke/trouble.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+            require('setup.trouble')
+        end,
+    })
+    -- TODO: hola!
+    use({
+        'folke/todo-comments.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('setup.todocomments')
         end,
     })
 end)

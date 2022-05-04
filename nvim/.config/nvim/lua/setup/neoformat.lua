@@ -11,7 +11,7 @@ vim.api.nvim_exec(
 )
 
 -- Statamic Antlers format
-vim.g.neoformat_enabled_html = { 'antlersformat' }
+vim.g.neoformat_enabled_html = {'prettier', 'antlersformat' }
 vim.api.nvim_exec(
     [[
         let g:neoformat_html_antlersformat = {
@@ -22,17 +22,14 @@ vim.api.nvim_exec(
     ]],
     true
 )
---[[
 vim.api.nvim_exec(
     [[
-        let g:neoformat_vue_prettier = {
+        let g:neoformat_html_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--stdin-filepath', '"%:p"', '--parser', 'vue', '--plugin', 'prettier-plugin-tailwindcss'],
+            \ 'args': ['--stdin-filepath', '"%:p"', '--parser', 'html', '--plugin', 'prettier-plugin-tailwindcss'],
             \ 'stdin': 1,
             \ 'try_node_exe': 1,
             \ }
-    ]-],
+    ]],
     true
 )
-]]
---

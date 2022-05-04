@@ -7,8 +7,10 @@ cmp.setup({
         end,
     },
     mapping = {
-        ['<c-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<c-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+        ['<c-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+        ['<c-u>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+        ['<c-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+        ['<c-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
         ['<c-space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
         ['<c-y>'] = cmp.mapping(cmp.mapping.disable),
         ['<c-e>'] = cmp.mapping({
