@@ -17,6 +17,7 @@ keymap(
 -- Files
 keymap('n', '<leader>w', ':w<cr>')
 keymap('n', '<leader>q', ':bwipeout<cr>')
+keymap('n', '<leader>Q', ':bufdo bwipeout<cr>')
 
 -- Line bubbling
 keymap('n', '<c-j>', ':m .+1<cr>==', { silent = true })
