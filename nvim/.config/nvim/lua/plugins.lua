@@ -26,7 +26,7 @@ packer.startup(function(use)
     })
 
     -- Git
-    use({ 'mhinz/vim-signify' })
+    -- use({ 'mhinz/vim-signify' })
 
     -- Telescope
     use({
@@ -63,12 +63,12 @@ packer.startup(function(use)
     })
     use({ 'windwp/nvim-ts-autotag' })
     use({ 'windwp/nvim-autopairs' })
-    -- use({
-    --     'simrat39/symbols-outline.nvim',
-    --     config = function()
-    --         require('setup.symbols-outline')
-    --     end,
-    -- })
+    use({
+        'simrat39/symbols-outline.nvim',
+        config = function()
+            require('setup.symbols-outline')
+        end,
+    })
 
     -- LSP
     use({
@@ -130,11 +130,15 @@ packer.startup(function(use)
             require('setup.vimtest')
         end,
     })
+    use({ 'tpope/vim-dispatch' })
 
-    -- Bookmarked to try later
-    -- use({ 'windwp/nvim-spectre' })
-    -- use({ 'lukas-reineke/indent-blankline.nvim' })
-    -- use({ 'karb94/neoscroll.nvim' })
+    use({ 'lukas-reineke/indent-blankline.nvim' })
+    use({
+        'karb94/neoscroll.nvim',
+        config = function()
+            require('setup.neoscroll')
+        end,
+    })
     use({
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -142,13 +146,43 @@ packer.startup(function(use)
             require('setup.lualine')
         end,
     })
-    -- use({ 'norcalli/nvim-colorizer.lua' })
-    use({ 'npxbr/glow.nvim' })
+    use({
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('setup.colorizer')
+        end,
+    })
     use({ 'ggandor/lightspeed.nvim' })
     use({ 'L3MON4D3/LuaSnip' })
-    -- use({ 'lewis6991/gitsigns.nvim' })
-    -- use({ 'folke/zen-mode.nvim' })
-    -- use({ 'folke/twilight.nvim' })
+    use({
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('setup.gitsigns')
+        end,
+    })
+
+    -- Writing
+    use({
+        'npxbr/glow.nvim',
+        config = function()
+            require('setup.glow')
+        end,
+    })
+    use({
+        'folke/zen-mode.nvim',
+
+        config = function()
+            require('setup.zenmode')
+        end,
+    })
+    use({
+        'folke/twilight.nvim',
+
+        config = function()
+            require('setup.twilight')
+        end,
+    })
+
     use({
         'folke/trouble.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -156,7 +190,6 @@ packer.startup(function(use)
             require('setup.trouble')
         end,
     })
-    -- TODO: hola!
     use({
         'folke/todo-comments.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
@@ -164,4 +197,7 @@ packer.startup(function(use)
             require('setup.todocomments')
         end,
     })
+
+    -- Bookmarked to try later
+    -- use({ 'windwp/nvim-spectre' })
 end)
