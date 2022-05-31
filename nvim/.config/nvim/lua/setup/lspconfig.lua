@@ -72,3 +72,5 @@ lspconfig.volar.setup({
     capabilities = capabilities,
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
 })
+
+lspconfig.rust_analyzer.setup({})
