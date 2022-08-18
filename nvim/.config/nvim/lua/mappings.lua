@@ -49,3 +49,12 @@ keymap('n', '<c-h>', '<c-w><c-h>')
 keymap('n', '<c-j>', '<c-w><c-j>')
 keymap('n', '<c-k>', '<c-w><c-k>')
 keymap('n', '<c-l>', '<c-w><c-l>')
+
+-- Toggle Numbers
+function toggleNumber()
+    numberVal = vim.api.nvim_get_option_value('number', {})
+    relativenumberVal = vim.api.nvim_get_option_value('relativenumber', {})
+    vim.api.nvim_set_option_value('number', not numberVal, {})
+    vim.api.nvim_set_option_value('relativenumber', not relativenumberVal, {})
+end
+keymap('n', '<leader>nu', '<cmd>lua toggleNumber()<cr>')

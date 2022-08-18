@@ -6,9 +6,14 @@ packer.startup(function(use)
     use({ 'tpope/vim-surround' })
     use({ 'tpope/vim-repeat' })
     use({ 'tpope/vim-unimpaired' })
-    use({ 'tpope/vim-commentary' })
+    -- use({ 'tpope/vim-commentary' })
     use({ 'nelstrom/vim-visual-star-search' })
-    use({ 'numToStr/Comment.nvim' })
+    use({
+        'numToStr/Comment.nvim',
+        config = function()
+            require('setup.comment')
+        end,
+    })
     use({ 'wellle/targets.vim' })
     use({
         'mattn/emmet-vim',
@@ -78,6 +83,9 @@ packer.startup(function(use)
         end,
     })
 
+    -- PHP
+    use({ 'phpactor/phpactor' })
+
     -- Autocompletion
     use({ 'hrsh7th/cmp-nvim-lsp' })
     use({ 'hrsh7th/cmp-buffer' })
@@ -132,7 +140,13 @@ packer.startup(function(use)
     })
     use({ 'tpope/vim-dispatch' })
 
-    use({ 'lukas-reineke/indent-blankline.nvim' })
+    use({
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('setup.indent-blankline')
+        end,
+    })
+
     use({
         'karb94/neoscroll.nvim',
         config = function()
@@ -163,6 +177,12 @@ packer.startup(function(use)
 
     -- Writing
     use({
+        'dkarter/bullets.vim',
+        config = function()
+            require('setup.markdown')
+        end,
+    })
+    use({
         'npxbr/glow.nvim',
         config = function()
             require('setup.glow')
@@ -170,14 +190,12 @@ packer.startup(function(use)
     })
     use({
         'folke/zen-mode.nvim',
-
         config = function()
             require('setup.zenmode')
         end,
     })
     use({
         'folke/twilight.nvim',
-
         config = function()
             require('setup.twilight')
         end,
@@ -195,6 +213,12 @@ packer.startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('setup.todocomments')
+        end,
+    })
+    use({
+        'ThePrimeagen/harpoon',
+        config = function()
+            require('setup.harpoon')
         end,
     })
 

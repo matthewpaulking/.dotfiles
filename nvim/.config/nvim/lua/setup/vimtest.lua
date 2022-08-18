@@ -6,3 +6,4 @@ keymap('n', '<leader>ts', ':w<cr>:TestSuite<cr>')
 keymap('n', '<leader>tl', ':w<cr>:TestLast<cr>')
 
 vim.api.nvim_exec([[ let test#strategy = "neovim" ]], false)
+vim.api.nvim_exec([[ let test#neovim#term_position = "vert" ]], false)

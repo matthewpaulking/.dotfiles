@@ -4,12 +4,14 @@ local keymap = require('lib.utils').keymap
 keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
 keymap('n', '<Leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = true })
 keymap('n', '<Leader>cd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
+keymap('n', '<leader>cd', ":lua require('telescope.builtin').lsp_definitions()<cr>")
 keymap('n', '<Leader>cD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { silent = true })
+keymap('n', '<Leader>cf', '<cmd>lua vim.lsp.buf.references()<CR>', { silent = true })
 keymap('n', '<Leader>ch', '<cmd>lua vim.lsp.buf.hover()<CR>', { silent = true })
 keymap('n', '<Leader>cs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { silent = true })
-keymap('n', '<Leader>ci', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', { silent = true })
-keymap('n', '<Leader>cn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { silent = true })
-keymap('n', '<Leader>cp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', { silent = true })
+keymap('n', '<Leader>ci', '<cmd>lua vim.diagnostic.open_float()<CR>', { silent = true })
+keymap('n', '<Leader>cn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { silent = true })
+keymap('n', '<Leader>cp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { silent = true })
 
 -- Config
 local lspconfig = require('lspconfig')
@@ -44,6 +46,13 @@ lspconfig.intelephense.setup({
     },
 })
 
+lspconfig.phpactor.setup({
+    init_options = {
+        ['language_server_phpstan.enabled'] = false,
+        ['language_server_psalm.enabled'] = false,
+    },
+})
+
 -- HTML, CSS, JS
 lspconfig.html.setup({
     capabilities = capabilities,
@@ -74,3 +83,8 @@ lspconfig.volar.setup({
 })
 
 lspconfig.rust_analyzer.setup({})
+
+lspconfig.marksman.setup({
+    cmd = { 'marksman', 'server' },
+    filetypes = { 'markdown' },
+})

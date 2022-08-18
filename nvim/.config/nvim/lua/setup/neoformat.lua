@@ -1,4 +1,5 @@
 vim.g.neoformat_try_node_exe = 1
+-- vim.g.neoformat_run_all_formatters = 1
 -- Autoformat on save
 vim.api.nvim_exec(
     [[
@@ -11,7 +12,7 @@ vim.api.nvim_exec(
 )
 
 -- Statamic Antlers format
-vim.g.neoformat_enabled_html = {'prettier', 'antlersformat' }
+vim.g.neoformat_enabled_html = { 'antlersformat', 'prettier' }
 vim.api.nvim_exec(
     [[
         let g:neoformat_html_antlersformat = {
