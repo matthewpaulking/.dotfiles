@@ -67,6 +67,8 @@ lspconfig.tailwindcss.setup({
     capabilities = capabilities,
 })
 
+lspconfig.astro.setup({})
+
 lspconfig.tsserver.setup({
     capabilities = capabilities,
 })
