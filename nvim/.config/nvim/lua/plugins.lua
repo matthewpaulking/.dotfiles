@@ -221,6 +221,7 @@ packer.startup(function(use)
             require('setup.harpoon')
         end,
     })
+    use({ 'jesseleite/vim-tinkeray' })
 
     -- Bookmarked to try later
     -- use({ 'windwp/nvim-spectre' })
