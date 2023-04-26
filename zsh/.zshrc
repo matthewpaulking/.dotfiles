@@ -12,6 +12,7 @@ alias python='python3'
 alias flip='~/flip-displays.sh'
 alias bs='brew services'
 alias hb='$HOMEBREW_PREFIX'
+alias tt='taskwarrior-tui'
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -21,6 +22,9 @@ export PATH=/opt/homebrew/opt/libpq/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/mpk/.oh-my-zsh"
 export EDITOR=nvim
+export ZK_NOTEBOOK_DIR="/Users/mpk/vimwiki"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PHP_CS_FIXER_IGNORE_ENV=true
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -88,7 +92,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z artisan)
+plugins=(git z artisan zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,3 +136,19 @@ export NVM_DIR="$HOME/.nvm"
 # Bun
 export BUN_INSTALL="/Users/mpk/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/mpk/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/mpk/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/mpk/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/mpk/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

@@ -29,8 +29,17 @@ packer.startup(function(use)
             require('setup.nightfox')
         end,
     })
+    -- use({ 'rebelot/kanagawa.nvim' })
+    --
+    -- use({
+    --     'sam4llis/nvim-tundra',
+    --     config = function()
+    --         require('setup.tundra-color')
+    --     end,
+    -- })
 
     -- Git
+    use({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' })
     -- use({ 'mhinz/vim-signify' })
 
     -- Telescope
@@ -66,6 +75,14 @@ packer.startup(function(use)
             require('setup.treesitter')
         end,
     })
+    use({ 'nvim-treesitter/nvim-treesitter-textobjects' })
+    use({
+        'chrisgrieser/nvim-various-textobjs',
+        config = function()
+            require('various-textobjs').setup({ useDefaultKeymaps = true })
+        end,
+    })
+    use({ 'nvim-treesitter/playground' })
     use({ 'windwp/nvim-ts-autotag' })
     use({ 'windwp/nvim-autopairs' })
     use({
@@ -91,14 +108,33 @@ packer.startup(function(use)
     use({ 'hrsh7th/cmp-buffer' })
     use({ 'hrsh7th/cmp-path' })
     use({ 'hrsh7th/cmp-cmdline' })
-    use({ 'hrsh7th/nvim-cmp' })
-    use({ 'hrsh7th/cmp-vsnip' })
+    -- use({ 'hrsh7th/nvim-cmp' })
     use({
-        'hrsh7th/vim-vsnip',
+        'hrsh7th/nvim-cmp',
         config = function()
             require('setup.cmp')
         end,
     })
+    use({
+        'L3MON4D3/LuaSnip',
+        config = function()
+            require('setup.luasnip')
+        end,
+    })
+    use({ 'saadparwaiz1/cmp_luasnip' })
+    -- use({
+    --     'L3MON4D3/LuaSnip',
+    --     tag = 'v<CurrentMajor>.*',
+    --     config = function()
+    --         require('setup.luasnip')
+    --     end,
+    -- })
+    -- use({
+    --     'hrsh7th/vim-vsnip',
+    --     config = function()
+    --         require('setup.cmp')
+    --     end,
+    -- })
 
     -- Debugging
     use({
@@ -166,8 +202,27 @@ packer.startup(function(use)
             require('setup.colorizer')
         end,
     })
-    use({ 'ggandor/lightspeed.nvim' })
-    use({ 'L3MON4D3/LuaSnip' })
+    use({
+        'ggandor/leap.nvim',
+        config = function()
+            require('leap').add_default_mappings()
+            -- require('setup.leap')
+        end,
+    })
+    use({
+        'ggandor/flit.nvim',
+        config = function()
+            require('flit').setup({
+                keys = { f = 'f', F = 'F', t = 't', T = 'T' },
+                -- A string like "nv", "nvo", "o", etc.
+                labeled_modes = 'v',
+                multiline = true,
+                -- Like `leap`s similar argument (call-specific overrides).
+                -- E.g.: opts = { equivalence_classes = {} }
+                opts = {},
+            })
+        end,
+    })
     use({
         'lewis6991/gitsigns.nvim',
         config = function()
@@ -222,6 +277,53 @@ packer.startup(function(use)
         end,
     })
     use({ 'jesseleite/vim-tinkeray' })
+    use({ 'mickael-menu/zk-nvim' })
+    use({
+        'johmsalas/text-case.nvim',
+        config = function()
+            require('setup.text-case')
+        end,
+    })
+    use({
+        'epwalsh/obsidian.nvim',
+        config = function()
+            require('setup.obsidian')
+        end,
+    })
+    use({
+        'nvim-neorg/neorg',
+        config = function()
+            require('setup.neorg')
+        end,
+        requires = { 'nvim-lua/plenary.nvim', 'nvim-neorg/neorg-telescope' },
+    })
+    -- use({
+    --     'folke/noice.nvim',
+    --     config = function()
+    --         require('setup.noice-options')
+    --     end,
+    --     requires = {
+    --         'MunifTanjim/nui.nvim',
+    --         -- 'rcarriga/nvim-notify',
+    --     },
+    -- })
+    use('simrat39/rust-tools.nvim')
+    use({
+        'iamcco/markdown-preview.nvim',
+        run = 'cd app && npm install',
+        setup = function()
+            vim.g.mkdp_filetypes = { 'markdown' }
+        end,
+        ft = { 'markdown' },
+    })
+    use({
+        'danymat/neogen',
+        config = function()
+            require('neogen').setup({})
+        end,
+        requires = 'nvim-treesitter/nvim-treesitter',
+    })
+    use({ 'github/copilot.vim' })
 
     -- Bookmarked to try later
     -- use({ 'windwp/nvim-spectre' })

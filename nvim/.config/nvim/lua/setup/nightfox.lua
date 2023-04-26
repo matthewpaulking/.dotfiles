@@ -1,8 +1,13 @@
 require('nightfox').setup({
+    palettes = {
+        nightfox = {
+            bg1 = '#11161d',
+        },
+    },
     options = {
         dim_inactive = true,
         styles = {
-            comments = 'italic',
+            comments = 'italic,bold',
             keywords = 'bold',
             functions = 'italic,bold',
         },

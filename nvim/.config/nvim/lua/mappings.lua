@@ -58,3 +58,5 @@ function toggleNumber()
     vim.api.nvim_set_option_value('relativenumber', not relativenumberVal, {})
 end
 keymap('n', '<leader>nu', '<cmd>lua toggleNumber()<cr>')
+keymap('n', '<leader>cta', "<cmd>s/\\(->\\)\\(\\w*\\)/['\\2']/g<cr>")
+keymap('n', '<leader>atc', "<cmd>s/\\(\\['\\)\\(\\w*\\)\\('\\]\\)/->\\2/g<cr>")

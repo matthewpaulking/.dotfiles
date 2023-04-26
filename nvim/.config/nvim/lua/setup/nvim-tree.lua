@@ -6,3 +6,4 @@ require('nvim-tree').setup({
 })
 
 keymap('n', '<leader>e', ':NvimTreeToggle<cr>')
+keymap('n', '<leader>te', ':NvimTreeFindFileToggle<cr>')

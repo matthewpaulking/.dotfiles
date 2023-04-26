@@ -58,6 +58,7 @@ lspconfig.html.setup({
     capabilities = capabilities,
     filetypes = { 'html', 'blade', 'antlers' },
 })
+lspconfig.antlersls.setup({})
 
 lspconfig.cssls.setup({
     capabilities = capabilities,
@@ -84,9 +85,22 @@ lspconfig.volar.setup({
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
 })
 
-lspconfig.rust_analyzer.setup({})
-
-lspconfig.marksman.setup({
-    cmd = { 'marksman', 'server' },
-    filetypes = { 'markdown' },
+-- lspconfig.rust_analyzer.setup({})
+rt = require('rust-tools')
+rt.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set('n', '<C-space>', rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set('n', '<Leader>a', rt.code_action_group.code_action_group, { buffer = bufnr })
+        end,
+    },
 })
+--
+-- lspconfig.marksman.setup({
+--     cmd = { 'marksman', 'server' },
+--     filetypes = { 'markdown' },
+-- })
+
+require('zk').setup({})
