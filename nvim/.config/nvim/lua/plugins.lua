@@ -47,7 +47,7 @@ packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = {
             { 'nvim-lua/plenary.nvim' },
-            { 'kyazdani42/nvim-web-devicons' },
+            { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
             { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
             { 'nvim-telescope/telescope-live-grep-raw.nvim' },
         },
@@ -58,12 +58,13 @@ packer.startup(function(use)
 
     -- nvim tree
     use({
-        'kyazdani42/nvim-tree.lua',
+        'nvim-tree/nvim-tree.lua',
         requires = {
-            { 'kyazdani42/nvim-web-devicons' },
+            { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
         },
         config = function()
             require('setup.nvim-tree')
+            -- require('setup.web-devicons')
         end,
     })
 
@@ -191,7 +192,7 @@ packer.startup(function(use)
     })
     use({
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
         config = function()
             require('setup.lualine')
         end,
@@ -202,27 +203,33 @@ packer.startup(function(use)
             require('setup.colorizer')
         end,
     })
+    -- use({
+    --     'ggandor/leap.nvim',
+    --     config = function()
+    --         require('leap').add_default_mappings()
+    --         -- require('setup.leap')
+    --     end,
+    -- })
     use({
-        'ggandor/leap.nvim',
+        'folke/flash.nvim',
         config = function()
-            require('leap').add_default_mappings()
-            -- require('setup.leap')
+            require('setup.flash')
         end,
     })
-    use({
-        'ggandor/flit.nvim',
-        config = function()
-            require('flit').setup({
-                keys = { f = 'f', F = 'F', t = 't', T = 'T' },
-                -- A string like "nv", "nvo", "o", etc.
-                labeled_modes = 'v',
-                multiline = true,
-                -- Like `leap`s similar argument (call-specific overrides).
-                -- E.g.: opts = { equivalence_classes = {} }
-                opts = {},
-            })
-        end,
-    })
+    -- use({
+    --     'ggandor/flit.nvim',
+    --     config = function()
+    --         require('flit').setup({
+    --             keys = { f = 'f', F = 'F', t = 't', T = 'T' },
+    --             -- A string like "nv", "nvo", "o", etc.
+    --             labeled_modes = 'v',
+    --             multiline = true,
+    --             -- Like `leap`s similar argument (call-specific overrides).
+    --             -- E.g.: opts = { equivalence_classes = {} }
+    --             opts = {},
+    --         })
+    --     end,
+    -- })
     use({
         'lewis6991/gitsigns.nvim',
         config = function()
@@ -258,7 +265,7 @@ packer.startup(function(use)
 
     use({
         'folke/trouble.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
         config = function()
             require('setup.trouble')
         end,
@@ -276,7 +283,11 @@ packer.startup(function(use)
             require('setup.harpoon')
         end,
     })
-    use({ 'jesseleite/vim-tinkeray' })
+    use({ 'jesseleite/vim-tinkeray',
+        config = function()
+            require('setup.tinkeray')
+        end,
+    })
     use({ 'mickael-menu/zk-nvim' })
     use({
         'johmsalas/text-case.nvim',
@@ -290,13 +301,13 @@ packer.startup(function(use)
             require('setup.obsidian')
         end,
     })
-    use({
-        'nvim-neorg/neorg',
-        config = function()
-            require('setup.neorg')
-        end,
-        requires = { 'nvim-lua/plenary.nvim', 'nvim-neorg/neorg-telescope' },
-    })
+    -- use({
+    --     'nvim-neorg/neorg',
+    --     config = function()
+    --         require('setup.neorg')
+    --     end,
+    --     requires = { 'nvim-lua/plenary.nvim', 'nvim-neorg/neorg-telescope' },
+    -- })
     -- use({
     --     'folke/noice.nvim',
     --     config = function()

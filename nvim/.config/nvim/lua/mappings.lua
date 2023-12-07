@@ -60,3 +60,6 @@ end
 keymap('n', '<leader>nu', '<cmd>lua toggleNumber()<cr>')
 keymap('n', '<leader>cta', "<cmd>s/\\(->\\)\\(\\w*\\)/['\\2']/g<cr>")
 keymap('n', '<leader>atc', "<cmd>s/\\(\\['\\)\\(\\w*\\)\\('\\]\\)/->\\2/g<cr>")
+
+-- Find Pest tests in file
+keymap('n', '<leader>lt', "/\\v(^test)|(^it)|(^describe)<cr>")

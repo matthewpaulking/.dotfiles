@@ -78,7 +78,7 @@ lspconfig.volar.setup({
     cmd = { 'vue-language-server', '--stdio' },
     init_options = {
         typescript = {
-            tsdk = '/Users/mpk/.nvm/versions/node/v17.3.0/lib/node_modules/typescript/lib',
+            tsdk = '/Users/making/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib',
         },
     },
     capabilities = capabilities,

@@ -34,3 +34,23 @@ vim.api.nvim_exec(
     ]],
     true
 )
+
+vim.api.nvim_exec(
+    [[
+        let g:neoformat_enabled_javascript = ['prettier']
+        let g:neoformat_enabled_typescript = ['prettier']
+        let g:neoformat_enabled_php = ['pint', 'phpcsfixer']
+
+        let g:neoformat_php_pint = {
+            \ 'exe': './vendor/bin/pint',
+            \ 'replace': 1,
+            \ }
+        
+        let g:neoformat_php_phpcsfixer = {
+            \ 'exe': './vendor/bin/php-cs-fixer',
+            \ 'args': ['fix', '-q'],
+            \ 'replace': 1,
+            \ }
+    ]],
+    true
+)
