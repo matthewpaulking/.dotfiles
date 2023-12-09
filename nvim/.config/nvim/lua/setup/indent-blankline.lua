@@ -1,6 +1,6 @@
 local keymap = require('lib.utils').keymap
 
-require('indent_blankline').setup({
+require('ibl').setup({
     enabled = false,
 })
 
