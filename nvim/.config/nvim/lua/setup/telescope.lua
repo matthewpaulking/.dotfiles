@@ -31,6 +31,15 @@ require('telescope').setup({
         layout_config = {
             prompt_position = 'top',
         },
+        vimgrep_arguments = {
+            'rg',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--hidden',
+            '--column',
+            '--smart-case',
+        },
         sorting_strategy = 'ascending',
         initial_mode = 'insert',
         file_ignore_patterns = { 'node_modules ' },
