@@ -80,7 +80,10 @@ packer.startup(function(use)
     use({
         'chrisgrieser/nvim-various-textobjs',
         config = function()
-            require('various-textobjs').setup({ useDefaultKeymaps = true })
+            require('various-textobjs').setup({
+                useDefaultKeymaps = true,
+                disabledKeymaps = { 'r', 'R' },
+            })
         end,
     })
     use({ 'nvim-treesitter/playground' })
