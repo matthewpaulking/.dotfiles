@@ -1,3 +1,4 @@
 .netrwhist
 nvim/.config/nvim/spell/
 nvim/.config/nvim/undo
+nvim/.config/nvim/plugin/packer_compiled.lua
