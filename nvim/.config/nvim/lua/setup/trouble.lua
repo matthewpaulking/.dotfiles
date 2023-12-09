@@ -1,10 +1,8 @@
-local keymap = require('lib.utils').keymap
-
-keymap('n', '<Leader>xx', '<cmd>TroubleToggle<CR>', { silent = true })
-keymap('n', '<Leader>xw', '<cmd>TroubleToggle workspace_diagnostics<CR>', { silent = true })
-keymap('n', '<Leader>xd', '<cmd>TroubleToggle document_diagnostics<CR>', { silent = true })
-keymap('n', '<Leader>xq', '<cmd>TroubleToggle quickfix<CR>', { silent = true })
-keymap('n', '<Leader>xl', '<cmd>TroubleToggle loclist<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>xx', '<cmd>TroubleToggle<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>xw', '<cmd>TroubleToggle workspace_diagnostics<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>xd', '<cmd>TroubleToggle document_diagnostics<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>xq', '<cmd>TroubleToggle quickfix<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>xl', '<cmd>TroubleToggle loclist<CR>', { silent = true })
 
 require('trouble').setup({
     position = 'bottom', -- position of the list can be: bottom, top, left, right

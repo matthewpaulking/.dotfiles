@@ -1,54 +1,55 @@
-local keymap = require('lib.utils').keymap
-
--- <leader>
 vim.g.mapleader = ' '
 
 -- Config
-keymap('n', '<leader>ve', ':e ~/.config/nvim/init.lua<cr>')
-keymap('n', '<leader>vo', ':e ~/.config/nvim/lua/options.lua<cr>')
-keymap('n', '<leader>vm', ':e ~/.config/nvim/lua/mappings.lua<cr>')
-keymap('n', '<leader>vp', ':e ~/.config/nvim/lua/plugins.lua<cr>')
-keymap(
+vim.keymap.set('n', '<leader>ve', ':e ~/.config/nvim/init.lua<cr>')
+vim.keymap.set('n', '<leader>vo', ':e ~/.config/nvim/lua/options.lua<cr>')
+vim.keymap.set('n', '<leader>vm', ':e ~/.config/nvim/lua/mappings.lua<cr>')
+vim.keymap.set('n', '<leader>vp', ':e ~/.config/nvim/lua/plugins.lua<cr>')
+vim.keymap.set(
     'n',
     '<leader>vs',
     ':so ~/.config/nvim/init.lua<cr>:so ~/.config/nvim/lua/options.lua<cr>:so ~/.config/nvim/lua/mappings.lua<cr>:so ~/.config/nvim/lua/plugins.lua<cr>'
 )
 
 -- Files
-keymap('n', '<leader>w', ':w<cr>')
-keymap('n', '<leader>q', ':bwipeout<cr>')
-keymap('n', '<leader>Q', ':bufdo bwipeout<cr>')
+vim.keymap.set('n', '<leader>w', ':w<cr>')
+vim.keymap.set('n', '<leader>q', ':bwipeout<cr>')
+vim.keymap.set('n', '<leader>Q', ':bufdo bwipeout<cr>')
 
 -- Line bubbling
-keymap('n', '<c-j>', ':m .+1<cr>==', { silent = true })
-keymap('n', '<c-k>', ':m .-2<cr>==', { silent = true })
-keymap('v', '<c-j>', ":m '>+1<cr>==gv=gv", { silent = true })
-keymap('v', '<c-k>', ":m '<-2<cr>==gv=gv", { silent = true })
+vim.keymap.set('n', '<c-j>', ':m .+1<cr>==', { silent = true })
+vim.keymap.set('n', '<c-k>', ':m .-2<cr>==', { silent = true })
+vim.keymap.set('v', '<c-j>', ":m '>+1<cr>==gv=gv", { silent = true })
+vim.keymap.set('v', '<c-k>', ":m '<-2<cr>==gv=gv", { silent = true })
 
 -- Make visual yanks place the cursor back where started
-keymap('v', 'y', 'ygv<Esc>')
+vim.keymap.set('v', 'y', 'ygv<Esc>')
 
 -- Keep search results centred
-keymap('n', 'n', 'nzzzv')
-keymap('n', 'N', 'Nzzzv')
-keymap('n', 'J', 'mzJ`z')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', 'J', 'mzJ`z')
 
 --After searching, pressing escape stops the highlight
-keymap('n', '<esc>', ':noh<cr><esc>', { silent = true })
+vim.keymap.set('n', '<esc>', ':noh<cr><esc>', { silent = true })
 
 -- Keep visual selection when indenting
-keymap('x', '>', '>gv')
-keymap('x', '<', '<gv')
+vim.keymap.set('x', '>', '>gv')
+vim.keymap.set('x', '<', '<gv')
 
 -- Easy end of line stuff
-keymap('i', ';;', '<Esc>A;<Esc>', { noremap = false })
-keymap('i', ',,', '<Esc>A,<Esc>', { noremap = false })
+vim.keymap.set('i', ';;', '<Esc>A;<Esc>', { noremap = false })
+vim.keymap.set('i', ',,', '<Esc>A,<Esc>', { noremap = false })
 
 -- Split navigation
-keymap('n', '<c-h>', '<c-w><c-h>')
-keymap('n', '<c-j>', '<c-w><c-j>')
-keymap('n', '<c-k>', '<c-w><c-k>')
-keymap('n', '<c-l>', '<c-w><c-l>')
+vim.keymap.set('n', '<c-h>', '<c-w><c-h>')
+vim.keymap.set('n', '<c-j>', '<c-w><c-j>')
+vim.keymap.set('n', '<c-k>', '<c-w><c-k>')
+vim.keymap.set('n', '<c-l>', '<c-w><c-l>')
+
+-- Macros
+vim.keymap.set('n', 'Q', '@q')
+vim.keymap.set('x', 'Q', ':norm @q')
 
 -- Toggle Numbers
 function toggleNumber()
@@ -57,9 +58,9 @@ function toggleNumber()
     vim.api.nvim_set_option_value('number', not numberVal, {})
     vim.api.nvim_set_option_value('relativenumber', not relativenumberVal, {})
 end
-keymap('n', '<leader>nu', '<cmd>lua toggleNumber()<cr>')
-keymap('n', '<leader>cta', "<cmd>s/\\(->\\)\\(\\w*\\)/['\\2']/g<cr>")
-keymap('n', '<leader>atc', "<cmd>s/\\(\\['\\)\\(\\w*\\)\\('\\]\\)/->\\2/g<cr>")
+vim.keymap.set('n', '<leader>nu', '<cmd>lua toggleNumber()<cr>')
+vim.keymap.set('n', '<leader>cta', "<cmd>s/\\(->\\)\\(\\w*\\)/['\\2']/g<cr>")
+vim.keymap.set('n', '<leader>atc', "<cmd>s/\\(\\['\\)\\(\\w*\\)\\('\\]\\)/->\\2/g<cr>")
 
 -- Find Pest tests in file
-keymap('n', '<leader>lt', "/\\v(^test)|(^it)|(^describe)<cr>")
+vim.keymap.set('n', '<leader>lt', '/\\v(^test)|(^it)|(^describe)<cr>')

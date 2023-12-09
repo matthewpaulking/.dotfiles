@@ -4,7 +4,4 @@ vim.api.nvim_exec(
     ]],
     true
 )
-local keymap = require('lib.utils').keymap
-
-keymap('n', '<leader>r', ':TinkerayRun<CR>')
-
+vim.keymap.set('n', '<leader>r', ':TinkerayRun<CR>')

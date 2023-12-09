@@ -1,17 +1,15 @@
 -- Keymaps
-local keymap = require('lib.utils').keymap
-
-keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
-keymap('n', '<Leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = true })
-keymap('n', '<Leader>cd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
-keymap('n', '<leader>cd', ":lua require('telescope.builtin').lsp_definitions()<cr>")
-keymap('n', '<Leader>cD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { silent = true })
-keymap('n', '<Leader>cf', '<cmd>lua vim.lsp.buf.references()<CR>', { silent = true })
-keymap('n', '<Leader>ch', '<cmd>lua vim.lsp.buf.hover()<CR>', { silent = true })
-keymap('n', '<Leader>cs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { silent = true })
-keymap('n', '<Leader>ci', '<cmd>lua vim.diagnostic.open_float()<CR>', { silent = true })
-keymap('n', '<Leader>cn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { silent = true })
-keymap('n', '<Leader>cp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>cd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
+vim.keymap.set('n', '<leader>cd', ":lua require('telescope.builtin').lsp_definitions()<cr>")
+vim.keymap.set('n', '<Leader>cD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>cf', '<cmd>lua vim.lsp.buf.references()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ch', '<cmd>lua vim.lsp.buf.hover()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>cs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>ci', '<cmd>lua vim.diagnostic.open_float()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>cn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>cp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { silent = true })
 
 -- Config
 require('neodev').setup()

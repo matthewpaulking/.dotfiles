@@ -1,5 +1,4 @@
-local keymap = require('lib.utils').keymap
-keymap('n', '<leader>so', '<cmd>SymbolsOutline<cr>')
+vim.keymap.set('n', '<leader>so', '<cmd>SymbolsOutline<cr>')
 
 local opts = {
     highlight_hovered_item = true,

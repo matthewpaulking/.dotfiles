@@ -1,9 +1,8 @@
-local keymap = require('lib.utils').keymap
 require('nvim-tree').setup({
     view = {
         width = 120,
     },
 })
 
-keymap('n', '<leader>e', ':NvimTreeToggle<cr>')
-keymap('n', '<leader>te', ':NvimTreeFindFileToggle<cr>')
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>te', ':NvimTreeFindFileToggle<cr>')

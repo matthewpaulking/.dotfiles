@@ -1,7 +1,5 @@
-local keymap = require('lib.utils').keymap
-
-keymap('n', '<Leader>xt', '<cmd>TodoTrouble<CR>', { silent = true })
-keymap('n', '<Leader>xT', '<cmd>TodoTelescope<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>xt', '<cmd>TodoTrouble<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>xT', '<cmd>TodoTelescope<CR>', { silent = true })
 
 require('todo-comments').setup({
     signs = true, -- show icons in the signs column
