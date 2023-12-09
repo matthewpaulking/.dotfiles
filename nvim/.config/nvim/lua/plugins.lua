@@ -335,7 +335,7 @@ packer.startup(function(use)
         requires = 'nvim-treesitter/nvim-treesitter',
     })
     use({ 'github/copilot.vim' })
-
+    use({ 'folke/neodev.nvim' })
     -- Bookmarked to try later
     -- use({ 'windwp/nvim-spectre' })
 end)

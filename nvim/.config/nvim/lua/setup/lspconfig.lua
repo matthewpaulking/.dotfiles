@@ -14,6 +14,7 @@ keymap('n', '<Leader>cn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { silent = 
 keymap('n', '<Leader>cp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { silent = true })
 
 -- Config
+require('neodev').setup()
 local lspconfig = require('lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -25,6 +26,8 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
         'additionalTextEdits',
     },
 }
+-- Lua
+lspconfig.lua_ls.setup({})
 
 -- PHP
 lspconfig.intelephense.setup({
