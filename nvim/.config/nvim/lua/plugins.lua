@@ -47,7 +47,7 @@ packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = {
             { 'nvim-lua/plenary.nvim' },
-            { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
+            { 'nvim-tree/nvim-web-devicons', tag = 'nerd-v2-compat' },
             { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
             { 'nvim-telescope/telescope-live-grep-raw.nvim' },
         },
@@ -60,7 +60,7 @@ packer.startup(function(use)
     use({
         'nvim-tree/nvim-tree.lua',
         requires = {
-            { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
+            { 'nvim-tree/nvim-web-devicons', tag = 'nerd-v2-compat' },
         },
         config = function()
             require('setup.nvim-tree')
@@ -195,7 +195,7 @@ packer.startup(function(use)
     })
     use({
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
+        requires = { 'nvim-tree/nvim-web-devicons', tag = 'nerd-v2-compat' },
         config = function()
             require('setup.lualine')
         end,
@@ -268,7 +268,7 @@ packer.startup(function(use)
 
     use({
         'folke/trouble.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', tag = "nerd-v2-compat" },
+        requires = { 'nvim-tree/nvim-web-devicons', tag = 'nerd-v2-compat' },
         config = function()
             require('setup.trouble')
         end,
@@ -286,7 +286,8 @@ packer.startup(function(use)
             require('setup.harpoon')
         end,
     })
-    use({ 'jesseleite/vim-tinkeray',
+    use({
+        'jesseleite/vim-tinkeray',
         config = function()
             require('setup.tinkeray')
         end,
