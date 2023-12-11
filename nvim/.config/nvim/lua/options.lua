@@ -32,3 +32,4 @@ opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current
 
 opt.laststatus = 3
+opt.cmdheight = 0
