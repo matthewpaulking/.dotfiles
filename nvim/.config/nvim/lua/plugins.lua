@@ -340,4 +340,6 @@ packer.startup(function(use)
     use({ 'shortcuts/no-neck-pain.nvim', tag = '*' })
     -- Bookmarked to try later
     -- use({ 'windwp/nvim-spectre' })
+    --
+    use({'jalvesaq/Nvim-R'})
 end)

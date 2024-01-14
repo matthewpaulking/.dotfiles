@@ -12,7 +12,7 @@ vim.keymap.set(
 )
 
 -- Files
-vim.keymap.set('n', '<leader>w', ':w<cr>')
+vim.keymap.set('n', '<leader>w', ':w<cr>', { silent = true })
 vim.keymap.set('n', '<leader>q', ':bwipeout<cr>')
 vim.keymap.set('n', '<leader>Q', ':bufdo bwipeout<cr>')
 
