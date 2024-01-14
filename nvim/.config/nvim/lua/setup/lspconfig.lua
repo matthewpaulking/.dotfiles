@@ -47,12 +47,12 @@ lspconfig.intelephense.setup({
     },
 })
 
-lspconfig.phpactor.setup({
-    init_options = {
-        ['language_server_phpstan.enabled'] = false,
-        ['language_server_psalm.enabled'] = false,
-    },
-})
+-- lspconfig.phpactor.setup({
+--     init_options = {
+--         ['language_server_phpstan.enabled'] = false,
+--         ['language_server_psalm.enabled'] = false,
+--     },
+-- })
 
 -- HTML, CSS, JS
 lspconfig.html.setup({
@@ -76,12 +76,12 @@ lspconfig.tsserver.setup({
 })
 
 lspconfig.volar.setup({
-    cmd = { 'vue-language-server', '--stdio' },
-    init_options = {
-        typescript = {
-            tsdk = '/Users/making/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib',
-        },
-    },
+    -- cmd = { 'vue-language-server', '--stdio' },
+    -- init_options = {
+    --     typescript = {
+    --         tsdk = '/Users/making/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib',
+    --     },
+    -- },
     capabilities = capabilities,
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
 })

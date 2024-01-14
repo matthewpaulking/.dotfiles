@@ -296,12 +296,12 @@ packer.startup(function(use)
             require('setup.text-case')
         end,
     })
-    use({
-        'epwalsh/obsidian.nvim',
-        config = function()
-            require('setup.obsidian')
-        end,
-    })
+    -- use({
+    --     'epwalsh/obsidian.nvim',
+    --     config = function()
+    --         require('setup.obsidian')
+    --     end,
+    -- })
     -- use({
     --     'nvim-neorg/neorg',
     --     config = function()
@@ -337,6 +337,7 @@ packer.startup(function(use)
     })
     use({ 'github/copilot.vim' })
     use({ 'folke/neodev.nvim' })
+    use({ 'shortcuts/no-neck-pain.nvim', tag = '*' })
     -- Bookmarked to try later
     -- use({ 'windwp/nvim-spectre' })
 end)
