@@ -358,6 +358,11 @@ packer.startup(function(use)
         end,
     })
     use({
+        'gsuuon/tshjkl.nvim',
+        config = function()
+            require('tshjkl').setup()
+        end,
+    })
         'smoka7/multicursors.nvim',
         requires = {
             'nvim-treesitter/nvim-treesitter',
