@@ -13,10 +13,12 @@ alias flip='~/flip-displays.sh'
 alias bs='brew services'
 alias hb='$HOMEBREW_PREFIX'
 alias tt='taskwarrior-tui'
+alias zc='printf "\033c"'
+alias lg='lazygit'
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH=.:./vendor/bin:$HOME/.composer/vendor/bin:$PATH
 export PATH=/opt/homebrew/opt/libpq/bin:$PATH
 
 # Path to your oh-my-zsh installation.
