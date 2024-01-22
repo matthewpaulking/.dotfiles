@@ -3,7 +3,16 @@ local packer = require('lib.packer-init')
 packer.startup(function(use)
     use({ 'wbthomason/packer.nvim' }) -- Let packer manage itself
 
-    use({ 'tpope/vim-surround' })
+    -- use({ 'tpope/vim-surround' })
+    use({
+        'kylechui/nvim-surround',
+        tag = '*', -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require('nvim-surround').setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end,
+    })
     use({ 'tpope/vim-repeat' })
     use({ 'tpope/vim-unimpaired' })
     -- use({ 'tpope/vim-commentary' })
