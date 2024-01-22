@@ -357,4 +357,14 @@ packer.startup(function(use)
             require('setup.trailblazer')
         end,
     })
+    use({
+        'smoka7/multicursors.nvim',
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+            'smoka7/hydra.nvim',
+        },
+        config = function()
+            require('setup.multicursors')
+        end,
+    })
 end)
