@@ -363,6 +363,13 @@ packer.startup(function(use)
             require('tshjkl').setup()
         end,
     })
+    use({
+        'stevearc/oil.nvim',
+        config = function()
+            require('oil').setup()
+            vim.keymap.set('n', '<leader>o', ':Oil<CR>')
+        end,
+    })
         'smoka7/multicursors.nvim',
         requires = {
             'nvim-treesitter/nvim-treesitter',
