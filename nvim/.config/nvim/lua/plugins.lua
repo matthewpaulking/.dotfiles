@@ -351,4 +351,10 @@ packer.startup(function(use)
     -- use({ 'windwp/nvim-spectre' })
     --
     use({ 'jalvesaq/Nvim-R' })
+    use({
+        'LeonHeidelbach/trailblazer.nvim',
+        config = function()
+            require('setup.trailblazer')
+        end,
+    })
 end)
