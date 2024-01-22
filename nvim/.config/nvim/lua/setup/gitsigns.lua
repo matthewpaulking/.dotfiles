@@ -44,6 +44,7 @@ require('gitsigns').setup({
         map('n', '<leader>hu', gs.undo_stage_hunk)
         map('n', '<leader>hR', gs.reset_buffer)
         map('n', '<leader>hp', gs.preview_hunk)
+        vim.keymap.set('n', '<leader>hq', ':Gitsigns setqflist all<CR>')
         map('n', '<leader>hb', function()
             gs.blame_line({ full = true })
         end)
