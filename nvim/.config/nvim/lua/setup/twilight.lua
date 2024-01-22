@@ -1,1 +1,1 @@
-vim.keymap.set('n', '<Leader>mt', '<cmd>Twilight<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>zt', '<cmd>Twilight<CR>', { silent = true })

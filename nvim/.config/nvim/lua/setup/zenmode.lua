@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<Leader>mz', '<cmd>ZenMode<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>zz', '<cmd>ZenMode<CR>', { silent = true })
 
 require('zen-mode').setup({
     window = {
