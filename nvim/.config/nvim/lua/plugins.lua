@@ -350,5 +350,5 @@ packer.startup(function(use)
     -- Bookmarked to try later
     -- use({ 'windwp/nvim-spectre' })
     --
-    use({'jalvesaq/Nvim-R'})
+    use({ 'jalvesaq/Nvim-R' })
 end)
