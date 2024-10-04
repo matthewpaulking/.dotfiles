@@ -36,6 +36,9 @@ require('nvim-treesitter.configs').setup({
             show_help = '?',
         },
     },
+    injections = {
+        enabled = true,
+    },
 })
 
 -- Autopairs

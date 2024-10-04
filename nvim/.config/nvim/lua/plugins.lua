@@ -344,7 +344,18 @@ packer.startup(function(use)
         end,
         requires = 'nvim-treesitter/nvim-treesitter',
     })
-    use({ 'github/copilot.vim' })
+    -- use({ 'github/copilot.vim' })
+    use({
+        'supermaven-inc/supermaven-nvim',
+        config = function()
+            require('supermaven-nvim').setup({
+                keymaps = {
+                    accept_suggestion = '<Tab>',
+                    accept_word = '<C-j>',
+                },
+            })
+        end,
+    })
     use({ 'folke/neodev.nvim' })
     use({ 'shortcuts/no-neck-pain.nvim', tag = '*' })
     -- Bookmarked to try later
@@ -370,6 +381,7 @@ packer.startup(function(use)
             vim.keymap.set('n', '<leader>o', ':Oil<CR>')
         end,
     })
+    use({
         'smoka7/multicursors.nvim',
         requires = {
             'nvim-treesitter/nvim-treesitter',
@@ -379,4 +391,21 @@ packer.startup(function(use)
             require('setup.multicursors')
         end,
     })
+    use({ 'nvim-neotest/nvim-nio' })
+    -- use({
+    --     'nvim-neotest/neotest',
+    --     requires = {
+    --         'nvim-lua/plenary.nvim',
+    --         'antoinemadec/FixCursorHold.nvim',
+    --         'nvim-treesitter/nvim-treesitter',
+    --         'theutz/neotest-pest',
+    --     },
+    --     config = function()
+    --         require('neotest').setup({
+    --             adapters = {
+    --                 require('neotest-pest'),
+    --             },
+    --         })
+    --     end,
+    -- })
 end)

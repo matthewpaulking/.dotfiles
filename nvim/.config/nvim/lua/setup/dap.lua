@@ -3,7 +3,7 @@ local dap = require('dap')
 dap.adapters.php = {
     type = 'executable',
     command = 'node',
-    args = { '/Users/mpk/vscode-php-debug/out/phpDebug.js' },
+    args = { '/Users/making/vscode-php-debug/out/phpDebug.js' },
 }
 
 dap.configurations.php = {

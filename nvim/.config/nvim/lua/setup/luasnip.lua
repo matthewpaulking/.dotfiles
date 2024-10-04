@@ -57,13 +57,13 @@ ls.add_snippets('vue', {
         'vue',
         fmt(
             [[
-            <template>
-            {}
-            </template>
-
             <script setup lang="ts">
             let props = defineProps<{{}}>()
             </script>
+
+            <template>
+            {}
+            </template>
   ]],
             {
                 i(1, 'prop'),

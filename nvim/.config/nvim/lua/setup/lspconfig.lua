@@ -47,12 +47,31 @@ lspconfig.intelephense.setup({
     },
 })
 
--- lspconfig.phpactor.setup({
---     init_options = {
---         ['language_server_phpstan.enabled'] = false,
---         ['language_server_psalm.enabled'] = false,
---     },
--- })
+lspconfig.phpactor.setup({
+    on_attach = function(client)
+        client.server_capabilities.completionProvider = false
+        client.server_capabilities.hoverProvider = false
+        client.server_capabilities.implementationProvider = false
+        client.server_capabilities.referencesProvider = false
+        client.server_capabilities.renameProvider = false
+        client.server_capabilities.selectionRangeProvider = false
+        client.server_capabilities.signatureHelpProvider = false
+        client.server_capabilities.typeDefinitionProvider = false
+        client.server_capabilities.workspaceSymbolProvider = false
+        client.server_capabilities.definitionProvider = false
+        client.server_capabilities.documentHighlightProvider = false
+        client.server_capabilities.documentSymbolProvider = false
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end,
+    init_options = {
+        ['language_server_phpstan.enabled'] = false,
+        ['language_server_psalm.enabled'] = false,
+    },
+    handlers = {
+        ['textDocument/publishDiagnostics'] = function() end,
+    },
+})
 
 -- HTML, CSS, JS
 lspconfig.html.setup({
@@ -76,7 +95,7 @@ lspconfig.tsserver.setup({
 })
 
 lspconfig.volar.setup({
-    -- cmd = { 'vue-language-server', '--stdio' },
+    cmd = { 'vue-language-server', '--stdio' },
     -- init_options = {
     --     typescript = {
     --         tsdk = '/Users/making/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib',

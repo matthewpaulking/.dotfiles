@@ -1,11 +1,20 @@
 vim.g.neoformat_try_node_exe = 1
 -- vim.g.neoformat_run_all_formatters = 1
 -- Autoformat on save
+-- vim.api.nvim_exec(
+--     [[
+--         augroup fmt
+--           autocmd!
+--           autocmd BufWritePre * undojoin | Neoformat
+--         augroup END
+--     ]],
+--     true
+-- )
 vim.api.nvim_exec(
     [[
         augroup fmt
           autocmd!
-          autocmd BufWritePre * undojoin | Neoformat
+          autocmd BufWritePre * try | undojoin | catch /E790/ | endtry | Neoformat
         augroup END
     ]],
     true
