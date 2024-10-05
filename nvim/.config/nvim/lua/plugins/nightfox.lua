@@ -1,5 +1,5 @@
 return {
-    "EdenEast/nightfox.nvim",
+    'EdenEast/nightfox.nvim',
     lazy = false,
     opts = {
         palettes = {
@@ -23,5 +23,5 @@ return {
     },
     init = function()
         vim.cmd('colorscheme nightfox')
-    end
+    end,
 }

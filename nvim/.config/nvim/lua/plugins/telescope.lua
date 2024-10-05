@@ -54,23 +54,67 @@ return {
         },
     },
     keys = {
-        { '<leader>f',   ':Telescope git_files<cr>',                                                                                                desc = 'Git Files' },
-        { '<leader>F',   ':Telescope find_files<cr>',                                                                                               'help' },
-        { '<leader>g',   '<cmd>lua require("telescope.builtin").live_grep({ additional_args = { "-j1" }})<CR>',                                     'help' },
+        {
+            '<leader>f',
+            ':Telescope git_files<cr>',
+            desc = 'Git Files',
+        },
+        {
+            '<leader>F',
+            ':Telescope find_files<cr>',
+            'help',
+        },
+        {
+            '<leader>g',
+            '<cmd>lua require("telescope.builtin").live_grep({ additional_args = { "-j1" }})<CR>',
+            'help',
+        },
 
         -- Find files in Laravel vendor directory
-        { '<leader>v',   '<cmd>lua require("telescope.builtin").live_grep({ additional_args = { "-j1" }, search_dirs = {"./vendor/laravel"}})<CR>', 'help' },
-        { '<leader>vf',  '<cmd>lua require("telescope.builtin").find_files({ search_dirs = {"./vendor/laravel"}})<CR>',                             'help' },
+        {
+            '<leader>v',
+            '<cmd>lua require("telescope.builtin").live_grep({ additional_args = { "-j1" }, search_dirs = {"./vendor/laravel"}})<CR>',
+            'help',
+        },
+        {
+            '<leader>vf',
+            '<cmd>lua require("telescope.builtin").find_files({ search_dirs = {"./vendor/laravel"}})<CR>',
+            'help',
+        },
 
         -- Find files in vendor directory
-        { '<leader>V',   '<cmd>lua require("telescope.builtin").live_grep({ additional_args = { "-j1" }, search_dirs = {"./vendor"}})<CR>',         'help' },
-        { '<leader>Vf',  '<cmd>lua require("telescope.builtin").find_files({ search_dirs = {"./vendor"}})<CR>',                                     'help' },
+        {
+            '<leader>V',
+            '<cmd>lua require("telescope.builtin").live_grep({ additional_args = { "-j1" }, search_dirs = {"./vendor"}})<CR>',
+            'help',
+        },
+        {
+            '<leader>Vf',
+            '<cmd>lua require("telescope.builtin").find_files({ search_dirs = {"./vendor"}})<CR>',
+            'help',
+        },
 
-        { '<leader>b',   ':Telescope buffers<cr>',                                                                                                  'help' },
+        {
+            '<leader>b',
+            ':Telescope buffers<cr>',
+            'help',
+        },
 
         -- List methods in a file
-        { '<leader>ls',  ":lua require('telescope.builtin').lsp_document_symbols({symbols = 'method', symbol_width = 100})<cr>",                    'help' },
-        { '<leader>tlg', ':Telescope git_status<cr>',                                                                                               'help' },
-        { '<leader>tlh', ':Telescope help_tags<cr>',                                                                                                'help' }
-    }
+        {
+            '<leader>ls',
+            ":lua require('telescope.builtin').lsp_document_symbols({symbols = 'method', symbol_width = 100})<cr>",
+            'help',
+        },
+        {
+            '<leader>tlg',
+            ':Telescope git_status<cr>',
+            'help',
+        },
+        {
+            '<leader>tlh',
+            ':Telescope help_tags<cr>',
+            'help',
+        },
+    },
 }

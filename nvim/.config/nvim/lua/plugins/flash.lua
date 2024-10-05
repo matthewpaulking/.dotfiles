@@ -1,11 +1,11 @@
 return {
     'folke/flash.nvim',
-    event = "VeryLazy",
+    event = 'VeryLazy',
     keys = {
-        { '<cr>',  mode = { 'n' },      '<cmd>:lua require("flash").jump()<cr>', },
-        { 's',     mode = { 'n' },      '<cmd>lua require("flash").treesitter()<cr>', },
-        { '<c-s>', mode = { 'c' },      '<cmd>lua require("flash").toggle()<cr>', },
-        { 'r',     mode = { 'o' },      '<cmd>lua require("flash").remote()<cr>', },
-        { 'R',     mode = { 'o', 'x' }, '<cmd>lua require("flash").treesitter_search()<cr>', },
-    }
+        { '<cr>', '<cmd>:lua require("flash").jump()<cr>', mode = { 'n' } },
+        { 's', '<cmd>lua require("flash").treesitter()<cr>', mode = { 'n' } },
+        { '<c-s>', '<cmd>lua require("flash").toggle()<cr>', mode = { 'c' } },
+        { 'r', '<cmd>lua require("flash").remote()<cr>', mode = { 'o' } },
+        { 'R', '<cmd>lua require("flash").treesitter_search()<cr>', mode = { 'o', 'x' } },
+    },
 }
