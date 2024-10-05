@@ -21,22 +21,36 @@ vim.api.nvim_exec(
 )
 
 -- Statamic Antlers format
-vim.g.neoformat_enabled_html = { 'antlersformat', 'prettier' }
-vim.api.nvim_exec(
-    [[
-        let g:neoformat_html_antlersformat = {
-            \ 'exe': 'antlersformat',
-            \ 'args': ['format'],
-            \ 'replace': 1,
-            \ }
-    ]],
-    true
-)
+vim.g.neoformat_enabled_html = { 'prettier' }
+vim.g.neoformat_enabled_astro = { 'prettier' }
+-- vim.g.neoformat_verbose = 1
+-- vim.api.nvim_exec(
+--     [[
+--         let g:neoformat_html_antlersformat = {
+--             \ 'exe': 'antlersformat',
+--             \ 'args': ['format'],
+--             \ 'replace': 1,
+--             \ }
+--     ]],
+--     true
+-- )
 vim.api.nvim_exec(
     [[
         let g:neoformat_html_prettier = {
             \ 'exe': 'prettier',
             \ 'args': ['--stdin-filepath', '"%:p"', '--parser', 'html', '--plugin', 'prettier-plugin-tailwindcss'],
+            \ 'stdin': 1,
+            \ 'try_node_exe': 1,
+            \ }
+    ]],
+    true
+)
+vim.g.neoformat_enabled_blade = { 'prettier' }
+vim.api.nvim_exec(
+    [[
+        let g:neoformat_blade_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin-filepath', '"%:p"'],
             \ 'stdin': 1,
             \ 'try_node_exe': 1,
             \ }
