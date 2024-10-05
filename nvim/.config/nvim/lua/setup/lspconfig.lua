@@ -78,7 +78,7 @@ lspconfig.html.setup({
     capabilities = capabilities,
     filetypes = { 'html', 'blade', 'antlers' },
 })
-lspconfig.antlersls.setup({})
+-- lspconfig.antlersls.setup({})
 
 lspconfig.cssls.setup({
     capabilities = capabilities,
