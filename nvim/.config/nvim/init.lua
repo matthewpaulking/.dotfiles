@@ -1,4 +1,5 @@
 require('options')
 require('mappings')
-require('plugins')
+require('config.lazy')
+-- require('plugins')
 require('filetypes')
