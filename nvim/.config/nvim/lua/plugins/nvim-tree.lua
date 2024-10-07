@@ -5,9 +5,11 @@ return {
     dependencies = {
         'nvim-tree/nvim-web-devicons',
     },
-    config = function()
-        require('nvim-tree').setup({})
-    end,
+    opts = {
+        view = {
+            width = 120,
+        },
+    },
     keys = {
         { '<leader>e', ':NvimTreeToggle<cr>', desc = 'Nvim-tree' },
         { '<leader>te', ':NvimTreeFindFileToggle<cr>', desc = 'Nvim-tree on File' },
