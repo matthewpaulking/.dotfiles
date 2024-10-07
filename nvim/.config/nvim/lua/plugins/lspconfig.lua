@@ -19,21 +19,22 @@ return {
 
         -- PHP
         require('lspconfig').intelephense.setup({
-            commands = {
-                IntelephenseIndex = {
-                    function()
-                        vim.lsp.buf.execute_command({ command = 'intelephense.index.workspace' })
-                    end,
+            capabilities = capabilities,
+            init_options = {
+                licenseKey = os.getenv('INTELEPHENSE_LICENSE_KEY'), -- this is tested and working as intended
+                licenceKey = '00P5X2K9NL7QCE3',
+            },
+            settings = {
+                intelephense = {
+                    telemetry = {
+                        enabled = false,
+                    },
+                    completion = {
+                        fullyQualifyGlobalConstantsAndFunctions = false,
+                    },
+                    returnVoid = false,
                 },
             },
-            on_attach = function(client, bufnr)
-                client.server_capabilities.documentFormattingProvider = false
-                client.server_capabilities.documentRangeFormattingProvider = false
-                -- if client.server_capabilities.inlayHintProvider then
-                --   vim.lsp.buf.inlay_hint(bufnr, true)
-                -- end
-            end,
-            capabilities = capabilities,
         })
 
         -- require('lspconfig').phpactor.setup({
