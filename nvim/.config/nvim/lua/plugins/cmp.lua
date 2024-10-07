@@ -89,28 +89,19 @@ return {
                 }),
             },
             mapping = {
-                ['<Tab>'] = cmp.mapping(function(fallback)
-                    -- print('tab...')
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.expand_or_jumpable() then
-                        luasnip.expand_or_jump()
-                    elseif has_words_before() then
-                        cmp.complete()
-                    else
-                        fallback()
-                    end
-                end, { 'i', 's' }),
-                ['<S-Tab>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()
-                    end
-                end, { 'i', 's' }),
-                ['<CR>'] = cmp.mapping.confirm({ select = false }),
+                ['<c-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+                ['<c-u>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+                ['<c-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+                ['<c-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+                ['<up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+                ['<down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+                ['<c-space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+                ['<c-y>'] = cmp.mapping(cmp.mapping.disable),
+                ['<c-e>'] = cmp.mapping({
+                    i = cmp.mapping.abort(),
+                    c = cmp.mapping.close(),
+                }),
+                ['<cr>'] = cmp.mapping.confirm({ select = true }),
             },
             sources = {
                 { name = 'nvim_lsp' },
