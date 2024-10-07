@@ -1,0 +1,16 @@
+return {
+    'vim-test/vim-test',
+    keys = {
+        { '<Leader>tn', ':silent TestNearest<CR>' },
+        { '<Leader>tf', ':silent TestFile<CR>' },
+        { '<Leader>ts', ':silent TestSuite<CR>' },
+        { '<Leader>tl', ':silent TestLast<CR>' },
+        { '<Leader>tv', ':silent TestVisit<CR>' },
+    },
+    config = function()
+        vim.cmd([[
+          let g:test#strategy = 'neovim'
+          let test#neovim#term_position = 'vert'
+        ]])
+    end,
+}
