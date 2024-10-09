@@ -3,6 +3,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
         sections = {
+            lualine_b = { 'grapple' },
             lualine_c = {
                 {
                     'filename',
