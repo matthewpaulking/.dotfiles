@@ -36,34 +36,6 @@ return {
                 },
             },
         })
-
-        -- require('lspconfig').phpactor.setup({
-        --   capabilities = capabilities,
-        --   on_attach = function(client, bufnr)
-        --     client.server_capabilities.completionProvider = false
-        --     client.server_capabilities.hoverProvider = false
-        --     client.server_capabilities.implementationProvider = false
-        --     client.server_capabilities.referencesProvider = false
-        --     client.server_capabilities.renameProvider = false
-        --     client.server_capabilities.selectionRangeProvider = false
-        --     client.server_capabilities.signatureHelpProvider = false
-        --     client.server_capabilities.typeDefinitionProvider = false
-        --     client.server_capabilities.workspaceSymbolProvider = false
-        --     client.server_capabilities.definitionProvider = false
-        --     client.server_capabilities.documentHighlightProvider = false
-        --     client.server_capabilities.documentSymbolProvider = false
-        --     client.server_capabilities.documentFormattingProvider = false
-        --     client.server_capabilities.documentRangeFormattingProvider = false
-        --   end,
-        --   init_options = {
-        --     ["language_server_phpstan.enabled"] = false,
-        --     ["language_server_psalm.enabled"] = false,
-        --   },
-        --   handlers = {
-        --     ['textDocument/publishDiagnostics'] = function() end
-        --   }
-        -- })
-
         -- Vue, JavaScript, TypeScript
         require('lspconfig').volar.setup({
             on_attach = function(client, bufnr)
@@ -178,14 +150,6 @@ return {
         -- require('mason-null-ls').setup({ automatic_installation = true, ensure_installed = {} })
 
         -- Keymaps
-        -- vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
-        -- vim.keymap.set('n', 'gd', ':Telescope lsp_definitions<CR>')
-        -- vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-        -- vim.keymap.set('n', 'gi', ':Telescope lsp_implementations<CR>')
-        -- vim.keymap.set('n', 'gr', ':Telescope lsp_references<CR>')
-        -- vim.keymap.set('n', '<Leader>lr', ':LspRestart<CR>', { silent = true })
-        -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-        -- vim.keymap.set('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
         vim.keymap.set('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { silent = true })
         vim.keymap.set('n', '<Leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = true })
         vim.keymap.set('n', '<Leader>cd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
