@@ -1,11 +1,11 @@
 return {
     'vim-test/vim-test',
     keys = {
-        { '<Leader>tn', ':silent TestNearest<CR>' },
-        { '<Leader>tf', ':silent TestFile<CR>' },
-        { '<Leader>ts', ':silent TestSuite<CR>' },
-        { '<Leader>tl', ':silent TestLast<CR>' },
-        { '<Leader>tv', ':silent TestVisit<CR>' },
+        { '<Leader>tn', ':w<cr>:TestNearest<CR>', { silent = true } },
+        { '<Leader>tf', ':w<cr>:TestFile<CR>', { silent = true } },
+        { '<Leader>ts', ':w<cr>:TestSuite<CR>', { silent = true } },
+        { '<Leader>tl', ':w<cr>:TestLast<CR>', { silent = true } },
+        { '<Leader>tv', ':w<cr>:TestVisit<CR>', { silent = true } },
     },
     config = function()
         vim.cmd([[
