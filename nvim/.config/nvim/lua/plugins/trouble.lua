@@ -1,21 +1,27 @@
 return {
     'folke/trouble.nvim',
-    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    opts = {
+        modes = {
+            lsp_document_symbols = {
+                format = '{kind_icon} {symbol.name}',
+            },
+        },
+    },
     cmd = 'Trouble',
     keys = {
         {
             '<leader>xx',
-            '<cmd>Trouble diagnostics toggle<cr>',
+            '<cmd>Trouble diagnostics toggle focus=true<cr>',
             desc = 'Diagnostics (Trouble)',
         },
         {
-            '<leader>xX',
-            '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+            '<leader>x',
+            '<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>',
             desc = 'Buffer Diagnostics (Trouble)',
         },
         {
-            '<leader>cs',
-            '<cmd>Trouble symbols toggle focus=false<cr>',
+            '<leader>xs',
+            '<cmd>Trouble symbols toggle focus=true<cr>',
             desc = 'Symbols (Trouble)',
         },
         {
