@@ -3,7 +3,18 @@ local layout_actions = require('telescope.actions.layout')
 
 return {
     'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'debugloop/telescope-undo.nvim',
+    },
+    config = function()
+        require('telescope').setup({
+            extensions = {
+                undo = {},
+            },
+        })
+        require('telescope').load_extension('undo')
+    end,
     opts = {
         defaults = {
             layout_strategy = 'horizontal',
@@ -110,6 +121,10 @@ return {
         {
             '<leader>tlh',
             ':Telescope help_tags<cr>',
+        },
+        {
+            '<leader>tu',
+            ':Telescope undo<cr>',
         },
     },
 }
