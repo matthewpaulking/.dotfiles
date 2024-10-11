@@ -161,6 +161,8 @@ return {
         vim.keymap.set('n', '<Leader>ci', '<cmd>lua vim.diagnostic.open_float()<CR>', { silent = true })
         vim.keymap.set('n', '<Leader>cn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { silent = true })
         vim.keymap.set('n', '<Leader>cp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { silent = true })
+        vim.keymap.set('n', '<leader><leader>i', '<cmd>LspInfo<CR>', { silent = true })
+        vim.keymap.set('n', '<leader><leader>r', '<cmd>LspRestart<CR>', { silent = true })
 
         -- Commands
         vim.api.nvim_create_user_command('Format', function()
