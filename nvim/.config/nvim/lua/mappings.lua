@@ -51,6 +51,10 @@ vim.keymap.set('n', '<c-l>', '<c-w><c-l>')
 vim.keymap.set('n', 'Q', '@q')
 vim.keymap.set('x', 'Q', ':norm @q')
 
+-- When text is wrapped, move by terminal rows, not lines, unless a count is provided.
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
+
 -- Toggle Numbers
 function toggleNumber()
     numberVal = vim.api.nvim_get_option_value('number', {})
