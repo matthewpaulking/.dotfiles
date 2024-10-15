@@ -4,6 +4,7 @@ return {
     keys = {
         { ']h', ':Gitsigns next_hunk<CR>' },
         { '[h', ':Gitsigns prev_hunk<CR>' },
+        { '<leader>hr', ':Gitsigns reset_hunk<CR>' },
         { '<leader>gs', ':Gitsigns stage_hunk<CR>' },
         { '<leader>gS', ':Gitsigns undo_stage_hunk<CR>' },
         { '<leader>gp', ':Gitsigns preview_hunk<CR>' },
