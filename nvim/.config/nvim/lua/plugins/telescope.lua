@@ -7,15 +7,18 @@ return {
         'nvim-lua/plenary.nvim',
         'debugloop/telescope-undo.nvim',
     },
-    config = function()
-        require('telescope').setup({
-            extensions = {
-                undo = {},
-            },
-        })
-        require('telescope').load_extension('undo')
-    end,
+    -- config = function()
+    --     require('telescope').setup({
+    --         extensions = {
+    --             undo = {},
+    --         },
+    --     })
+    --     require('telescope').load_extension('undo')
+    -- end,
     opts = {
+        extensions = {
+            undo = {},
+        },
         defaults = {
             layout_strategy = 'horizontal',
             layout_config = {
@@ -64,6 +67,9 @@ return {
             },
         },
     },
+    init = function()
+        require('telescope').load_extension('undo')
+    end,
     keys = {
         {
             '<leader>f',
