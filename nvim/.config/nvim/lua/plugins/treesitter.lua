@@ -56,6 +56,7 @@ return {
             'vue',
             'xml',
             'yaml',
+            'blade',
         },
         auto_install = true,
         highlight = {
