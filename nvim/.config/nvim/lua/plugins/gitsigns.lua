@@ -5,10 +5,10 @@ return {
         { ']h', ':Gitsigns next_hunk<CR>' },
         { '[h', ':Gitsigns prev_hunk<CR>' },
         { '<leader>hr', ':Gitsigns reset_hunk<CR>' },
-        { '<leader>gs', ':Gitsigns stage_hunk<CR>' },
-        { '<leader>gS', ':Gitsigns undo_stage_hunk<CR>' },
-        { '<leader>gp', ':Gitsigns preview_hunk<CR>' },
-        { '<leader>gb', ':Gitsigns blame_line<CR>' },
+        { '<leader>hs', ':Gitsigns stage_hunk<CR>' },
+        { '<leader>hS', ':Gitsigns undo_stage_hunk<CR>' },
+        { '<leader>hp', ':Gitsigns preview_hunk<CR>' },
+        { '<leader>hb', ':Gitsigns blame_line<CR>' },
     },
     opts = {
         preview_config = {
