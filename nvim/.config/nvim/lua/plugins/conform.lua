@@ -20,9 +20,7 @@ return {
                 sh = { 'shfmt' },
                 lua = { 'stylua' },
                 javascript = { 'prettierd', 'prettier', stop_after_first = true },
-                blade = function(bufnr)
-                    return { first(bufnr, 'prettierd', 'prettier'), 'pint' }
-                end,
+                blade = { 'prettierd', 'prettier', stop_after_first = true },
                 vue = { 'prettierd', 'prettier', stop_after_first = true },
                 php = { 'pint', 'php-cs-fixer', stop_after_first = true },
             },
