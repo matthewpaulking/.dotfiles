@@ -92,3 +92,25 @@ function EscapePair()
 end
 
 vim.api.nvim_set_keymap('i', '<C-l>', '<cmd>lua EscapePair()<CR>', { noremap = true, silent = true })
+
+function EditLineFromLazygit(file_path, line)
+    local path = vim.fn.expand('%:p')
+    if path == file_path then
+        vim.cmd(tostring(line))
+        vim.cmd('NvimTreeClose')
+    else
+        vim.cmd('e ' .. file_path)
+        vim.cmd(tostring(line))
+        vim.cmd('NvimTreeClose')
+    end
+end
+
+function EditFromLazygit(file_path)
+    local path = vim.fn.expand('%:p')
+    if path == file_path then
+        return
+    else
+        vim.cmd('e ' .. file_path)
+        vim.cmd('NvimTreeClose')
+    end
+end

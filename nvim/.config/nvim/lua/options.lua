@@ -33,3 +33,6 @@ opt.splitright = true -- Put new windows right of current
 
 opt.laststatus = 3
 opt.cmdheight = 1
+
+-- Floating window borders (Neovim 0.11+)
+opt.winborder = 'rounded'

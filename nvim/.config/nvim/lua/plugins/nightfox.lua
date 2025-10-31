@@ -8,7 +8,8 @@ return {
             },
         },
         options = {
-            dim_inactive = true,
+            transparent = true,
+            dim_inactive = false,
             styles = {
                 comments = 'italic,bold',
                 keywords = 'bold',
